@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Problem_20
 {
@@ -12,26 +9,37 @@ namespace Problem_20
         public bool IsValid(string s)
         {
             Stack<char> Parentheses = new Stack<char>();
-            foreach (char str in s.ToArray())
+            foreach (char str in s)
             {
                 switch (str)
                 {
                     case '(':
-                        Parentheses.Push(str);
-                        break;
-                    case ')':
-                        Parentheses.Pop();
-                        break;
                     case '[':
-                        Parentheses.Push(str);
-                        break;
-                    case ']':
-                        Parentheses.Pop();
-                        break;
                     case '{':
                         Parentheses.Push(str);
                         break;
+                    case ')':
+                        if (Parentheses.Count == 0 || Parentheses.Peek() != '(')
+                        {
+                            return false;
+                        }
+
+                        Parentheses.Pop();
+                        break;
+                    case ']':
+                        if (Parentheses.Count == 0 || Parentheses.Peek() != '[')
+                        {
+                            return false;
+                        }
+
+                        Parentheses.Pop();
+                        break;
                     case '}':
+                        if (Parentheses.Count == 0 || Parentheses.Peek() != '{')
+                        {
+                            return false;
+                        }
+
                         Parentheses.Pop();
                         break;
                     default:

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Problem_128
 {
@@ -8,11 +9,30 @@ namespace Problem_128
     {
         public static int LongestConsecutive(int[] nums)
         {
-            int result = 0;
-            List<int> list = new List<int>();
+            if (nums == null || nums.Length == 0)
+                return 0;
 
+            HashSet<int> numList = new HashSet<int>(nums);
+            int longestStreak = 0;
 
-            return result;
+            foreach (int num in numList)
+            {
+                if (!numList.Contains(num - 1))
+                {
+                    int currentNum = num;
+                    int currentStreak = 1;
+
+                    while (numList.Contains(currentNum + 1))
+                    {
+                        currentNum++;
+                        currentStreak++;
+                    }
+
+                    longestStreak = Math.Max(longestStreak, currentStreak);
+                }
+            }
+
+            return longestStreak;
         }
 
         static void Main(string[] args)

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace Problem_68
@@ -11,83 +10,74 @@ namespace Problem_68
     {
         public static IList<string> FullJustify(string[] words, int maxWidth)
         {
-            IList<string> lines = new List<string>();
-            int lineLength = 0;
-            string line = string.Empty;
-
-            foreach (string word in words)
+            int count = words.Length;
+            int curr = 0;
+            List<string> result = new List<string>();
+            StringBuilder sb = new StringBuilder(maxWidth);
+            while (curr < count)
             {
-                if (lineLength + word.Length > maxWidth)
+                int width = 0;
+                int first = curr;
+                while (curr < count && width + words[curr].Length <= maxWidth)
                 {
-                    int spaces = maxWidth - lineLength;
-                    int spacePerWord = 1;
-                    int extraSpaces = 0;
-                    int wordCount = 1;
-                    if (line.Length > 0)
-                    {
-                        wordCount = line.Split(' ').Length;
-                    }
+                    width = width + words[curr].Length + 1;
+                    curr++;
+                }
 
-                    if (wordCount > 1)
+                int gaps = curr - first - 1;
+                int spaces = maxWidth - (width - 1) + gaps;
+                int spacesBetween = (gaps > 1) ? spaces / gaps : spaces;
+                int rem = spaces - spacesBetween * gaps;
+                for (int i = first; i < curr; i++)
+                {
+                    sb.Append(words[i]);
+                    if (i != curr - 1)
                     {
-                        spacePerWord = spaces / (wordCount - 1);
-                        extraSpaces = spaces % (wordCount - 1);
-                    }
-
-                    string newLine = string.Empty;
-                    string[] wordsInLine = line.Split(' ');
-
-                    for (int i = 0; i < wordsInLine.Length; i++)
-                    {
-                        newLine += wordsInLine[i];
-                        if (i < wordsInLine.Length - 1)
+                        int s = 1;
+                        if (curr < words.Length)
                         {
-                            int spacesToAdd = spacePerWord + (extraSpaces > 0 ? 1 : 0);
-                            newLine += string.Empty.PadLeft(spacesToAdd, ' ');
-                            extraSpaces--;
+                            s = spacesBetween;
+                            if (rem-- > 0)
+                                s += 1;
                         }
+
+                        sb.Append(' ', s);
                     }
-
-                    lines.Add(newLine);
-                    line = string.Empty;
-                    lineLength = 0;
                 }
 
-                if (line.Length > 0)
-                {
-                    line += ' ';
-                    lineLength++;
-                }
-
-                line += word;
-                lineLength += word.Length;
-
-                if (lineLength != line.Length)
-                {
-
-                }
+                sb.Append(' ', maxWidth - sb.Length);
+                result.Add(sb.ToString());
+                sb.Clear();
             }
 
-            if (line.Length > 0)
-            {
-                int spacesToAdd = maxWidth - lineLength;
-                line += string.Empty.PadLeft(spacesToAdd, ' ');
-                lines.Add(line);
-            }
-
-            return lines;
+            return result;
         }
 
         static void Main(string[] args)
         {
             string[] words1 = { "This", "is", "an", "example", "of", "text", "justification." };
-            FullJustify(words1, 16);
+            IList<string> result1 = FullJustify(words1, 16);
+            Console.WriteLine("Example 1:");
+            foreach (string line in result1)
+            {
+                Console.WriteLine(line);
+            }
 
             string[] words2 = { "What", "must", "be", "acknowledgment", "shall", "be" };
-            FullJustify(words2, 16);
+            IList<string> result2 = FullJustify(words2, 16);
+            Console.WriteLine("\nExample 2:");
+            foreach (string line in result2)
+            {
+                Console.WriteLine(line);
+            }
 
             string[] words3 = { "Science", "is", "what", "we", "understand", "well", "enough", "to", "explain", "to", "a", "computer.", "Art", "is", "everything", "else", "we", "do" };
-            FullJustify(words3, 20);
+            IList<string> result3 = FullJustify(words3, 20);
+            Console.WriteLine("\nExample 3:");
+            foreach (string line in result3)
+            {
+                Console.WriteLine(line);
+            }
         }
     }
 }

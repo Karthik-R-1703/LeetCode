@@ -1,6 +1,4 @@
-﻿using System.Net.NetworkInformation;
-
-namespace Problem_2
+﻿namespace Problem_2
 {
     //Definition for singly-linked list.
     public class ListNode
@@ -20,57 +18,32 @@ namespace Problem_2
     {
         public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
-            int sum = Convert_List_to_Num(l1) + Convert_List_to_Num(l2);
+            ListNode result = new ListNode();
+            ListNode head = result;
 
-            return Convert_Num_to_List(sum);
-        }
-
-        public static int Convert_List_to_Num(ListNode l)
-        {
-            int val = 0;
-
-            while (l != null)
+            int sum = 0;
+            while (l1 != null || l2 != null || sum > 0)
             {
-                val = (val * 10) + l.val;
-                l = l.next;
-            }
-
-            int revVal = 0;
-
-            while (val > 0)
-            {
-                int r = val % 10;
-                revVal = (revVal * 10) + r;
-                val /= 10;
-            }
-
-            return revVal;
-        }
-
-        public static ListNode Convert_Num_to_List(int val)
-        {
-            ListNode l = new ListNode();
-            ListNode head = l;
-
-            while (val > 0)
-            {
-                int num = val % 10;
-                val /= 10;
-
-                head.val = num;
-                if (val / 10 > 0)
+                if (l1 != null)
                 {
-                    head.next = new ListNode();
-                }
-                else
-                {
-                    head.next = null;
+                    sum += l1.val;
+                    l1 = l1.next;
                 }
 
-                head = head.next;
+                if (l2 != null)
+                {
+                    sum += l2.val;
+                    l2 = l2.next;
+                }
+
+                int unitsPlace = sum % 10;
+                sum /= 10;
+
+                result.next = new ListNode(unitsPlace);
+                result = result.next;
             }
 
-            return l;
+            return head.next;
         }
 
         static void Main(string[] args)
@@ -97,6 +70,20 @@ namespace Problem_2
             l4.next = new ListNode(9);
             l4.next.next = new ListNode(9);
             l4.next.next.next = new ListNode(9);
+            sum = AddTwoNumbers(l3, l4);
+
+            ListNode l5 = new ListNode(9);
+
+            ListNode l6 = new ListNode(1);
+            l6.next = new ListNode(9);
+            l6.next.next = new ListNode(9);
+            l6.next.next.next = new ListNode(9);
+            l6.next.next.next.next = new ListNode(9);
+            l6.next.next.next.next.next = new ListNode(9);
+            l6.next.next.next.next.next.next = new ListNode(9);
+            l6.next.next.next.next.next.next.next = new ListNode(9);
+            l6.next.next.next.next.next.next.next.next = new ListNode(9);
+            l6.next.next.next.next.next.next.next.next.next = new ListNode(9);
             sum = AddTwoNumbers(l3, l4);
         }
     }

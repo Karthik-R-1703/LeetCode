@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_1299", "Problem_129
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_238", "Problem_238\Problem_238.csproj", "{895075F4-CFC6-4474-A60E-230768064E8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_392", "Problem_392\Problem_392.csproj", "{662FE820-638E-48EA-8EBD-F2EC11AB82A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -241,6 +243,14 @@ Global
 		{895075F4-CFC6-4474-A60E-230768064E8A}.Release|x64.Build.0 = Release|x64
 		{895075F4-CFC6-4474-A60E-230768064E8A}.Release|x86.ActiveCfg = Release|x86
 		{895075F4-CFC6-4474-A60E-230768064E8A}.Release|x86.Build.0 = Release|x86
+		{662FE820-638E-48EA-8EBD-F2EC11AB82A1}.Debug|x64.ActiveCfg = Debug|x64
+		{662FE820-638E-48EA-8EBD-F2EC11AB82A1}.Debug|x64.Build.0 = Debug|x64
+		{662FE820-638E-48EA-8EBD-F2EC11AB82A1}.Debug|x86.ActiveCfg = Debug|x86
+		{662FE820-638E-48EA-8EBD-F2EC11AB82A1}.Debug|x86.Build.0 = Debug|x86
+		{662FE820-638E-48EA-8EBD-F2EC11AB82A1}.Release|x64.ActiveCfg = Release|x64
+		{662FE820-638E-48EA-8EBD-F2EC11AB82A1}.Release|x64.Build.0 = Release|x64
+		{662FE820-638E-48EA-8EBD-F2EC11AB82A1}.Release|x86.ActiveCfg = Release|x86
+		{662FE820-638E-48EA-8EBD-F2EC11AB82A1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

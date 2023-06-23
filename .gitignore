@@ -1,0 +1,6 @@
+*.cache
+*.txt
+.NETFramework,Version=v4.8.AssemblyAttributes.cs
+*.vsidx
+*.lock
+*.suo

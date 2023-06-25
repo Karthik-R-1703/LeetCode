@@ -1,6 +1,9 @@
 *.cache
-*.txt
-.NETFramework,Version=v4.8.AssemblyAttributes.cs
-*.vsidx
+*.exe
+*.exe.config
 *.lock
+*.pdb
 *.suo
+*.txt
+*.vsidx
+.NETFramework,Version=v4.8.AssemblyAttributes.cs

@@ -15,9 +15,20 @@
 
         public static int RemoveElement(int[] nums, int val)
         {
-            int k = 0;
+            int left = 0;
+            int right = 0;
+            while (right < nums.Length)
+            {
+                if (nums[right] != val)
+                {
+                    nums[left] = nums[right];
+                    left++;
+                }
 
-            return k;
+                right++;
+            }
+
+            return left;
         }
     }
 }

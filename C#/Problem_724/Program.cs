@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Problem_724
@@ -25,21 +24,19 @@ namespace Problem_724
         public static int PivotIndex(int[] nums)
         {
             int lpi = -1;
+            int l_sum = 0;
+            int r_sum = nums.Sum();
 
             for (int i = 0; i < nums.Length; i++)
             {
-                int[] l_nums = new int[i];
-                Array.Copy(nums, 0, l_nums, 0, i);
-
-                int r = nums.Length - 1 - i;
-                int[] r_nums = new int[r];
-                Array.Copy(nums, i + 1, r_nums, 0, r);
-
-                if (l_nums.Sum() == r_nums.Sum())
+                r_sum -= nums[i];
+                if (l_sum == r_sum)
                 {
                     lpi = i;
                     break;
                 }
+
+                l_sum += nums[i];
             }
 
             return lpi;

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Problem_26
 {
@@ -24,19 +20,19 @@ namespace Problem_26
         public static int RemoveDuplicates(int[] nums)
         {
             int left = 0;
-            int right = 1;
+            int right = 0;
             while (right < nums.Length)
             {
-                if (nums[right] != nums[left])
+                if (nums[left] != nums[right])
                 {
-                    nums[left] = nums[right];
                     left++;
+                    nums[left] = nums[right];
                 }
 
                 right++;
             }
 
-            return left;
+            return left + 1;
         }
     }
 }

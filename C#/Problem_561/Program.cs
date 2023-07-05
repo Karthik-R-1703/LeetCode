@@ -1,4 +1,6 @@
-﻿namespace Problem_561
+﻿using System;
+
+namespace Problem_561
 {
     // 561. Array Partition
     // https://leetcode.com/problems/array-partition/
@@ -7,6 +9,13 @@
         public static int ArrayPairSum(int[] nums)
         {
             int sum = 0;
+            Array.Sort(nums);
+
+            for (int i = 0; i < nums.Length; i += 2)
+            {
+                sum += nums[i];
+            }
+
             return sum;
         }
 

@@ -18,7 +18,7 @@
 
         public static int OpenLock(string[] deadends, string target)
         {
-            int turns = 0;
+            int turns = -1;
             return turns;
         }
     }

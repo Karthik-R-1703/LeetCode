@@ -1,4 +1,8 @@
-﻿namespace Problem_752
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Problem_752
 {
     // 752. Open the Lock
     // https://leetcode.com/problems/open-the-lock/
@@ -18,7 +22,46 @@
 
         public static int OpenLock(string[] deadends, string target)
         {
-            int turns = -1;
+            string start = "0000";
+            if (start == target)
+                return 0;
+
+            if (deadends.Contains(start))
+                return -1;
+
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue(start);
+
+            HashSet<string> visited = new HashSet<string>();
+            visited.Add(start);
+
+            int turns = 0;
+            while (queue.Count > 0)
+            {
+                string cur_lock = queue.Dequeue();
+                for (int i = 0; i < 4; i++)
+                {
+                    for (int j = -1; j <= 1; j += 2)
+                    {
+                        int digit = cur_lock[i] - '0';
+                        int newDigit = (digit + j + 10) % 10;
+                        string new_lock = cur_lock.Substring(0, i) + newDigit + cur_lock.Substring(i + 1);
+
+                        if (new_lock == target)
+                        {
+                            return turns + 1;
+                        }
+
+                        if (!deadends.Contains(new_lock) && !visited.Contains(new_lock))
+                        {
+                            queue.Enqueue(new_lock);
+                            visited.Add(new_lock);
+                            turns++;
+                        }
+                    }
+                }
+            }
+
             return turns;
         }
     }

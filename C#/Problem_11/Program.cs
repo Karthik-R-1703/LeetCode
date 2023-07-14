@@ -1,4 +1,6 @@
-﻿namespace Problem_11
+﻿using System;
+
+namespace Problem_11
 {
     // 11. Container With Most Water
     // https://leetcode.com/problems/container-with-most-water/
@@ -15,7 +17,27 @@
 
         public static int MaxArea(int[] height)
         {
-            return 0;
+            int n = height.Length;
+            int maxArea = 0;
+            int left = 0;
+            int right = n - 1;
+
+            while (left < right)
+            {
+                int currentArea = Math.Min(height[left], height[right]) * (right - left);
+                maxArea = Math.Max(maxArea, currentArea);
+
+                if (height[left] < height[right])
+                {
+                    left++;
+                }
+                else
+                {
+                    right--;
+                }
+            }
+
+            return maxArea;
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Problem_752
@@ -29,21 +28,22 @@ namespace Problem_752
             if (deadends.Contains(start))
                 return -1;
 
-            Queue<string> queue = new Queue<string>();
-            queue.Enqueue(start);
+            Queue<(string, int)> queue = new Queue<(string, int)>();
+            queue.Enqueue((start, 0));
 
-            HashSet<string> visited = new HashSet<string>();
-            visited.Add(start);
+            HashSet<string> visited = new HashSet<string>
+            {
+                start
+            };
 
-            int turns = 0;
             while (queue.Count > 0)
             {
-                string cur_lock = queue.Dequeue();
+                (string cur_lock, int turns) = queue.Dequeue();
                 for (int i = 0; i < 4; i++)
                 {
                     for (int j = -1; j <= 1; j += 2)
                     {
-                        int digit = cur_lock[i] - '0';
+                        int digit = int.Parse(cur_lock[i].ToString());
                         int newDigit = (digit + j + 10) % 10;
                         string new_lock = cur_lock.Substring(0, i) + newDigit + cur_lock.Substring(i + 1);
 
@@ -54,15 +54,14 @@ namespace Problem_752
 
                         if (!deadends.Contains(new_lock) && !visited.Contains(new_lock))
                         {
-                            queue.Enqueue(new_lock);
+                            queue.Enqueue((new_lock, turns + 1));
                             visited.Add(new_lock);
-                            turns++;
                         }
                     }
                 }
             }
 
-            return turns;
+            return -1;
         }
     }
 }

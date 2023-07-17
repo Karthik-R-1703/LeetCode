@@ -26,6 +26,9 @@
             if (left == null || right == null)
                 return false;
 
+            if (left.val != right.val)
+                return false;
+
             return CheckSymmetry(left.left, right.right) && CheckSymmetry(left.right, right.left);
         }
 

@@ -62,16 +62,20 @@ namespace Problem_430
                 if (cur.child != null)
                 {
                     Node next = cur.next;
-                    cur.next = cur.child;
-                    cur.child.prev = cur;
-                    Node child = Flatten(cur.child);
+                    Node child = cur.child;
                     while (child.next != null)
                     {
                         child = child.next;
                     }
 
-                    next.prev = child;
-                    child.next = next;
+                    cur.next = cur.child;
+                    cur.child.prev = cur;
+                    cur.child = null;
+                    if (next != null)
+                    {
+                        child.next = next;
+                        next.prev = child;
+                    }
                 }
 
                 cur = cur.next;

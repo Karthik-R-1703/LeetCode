@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Problem_234
 {
@@ -24,11 +21,25 @@ namespace Problem_234
     {
         public static bool IsPalindrome(ListNode head)
         {
-            return false;
+            string num = string.Empty;
+
+            while (head != null)
+            {
+                num += head.val.ToString();
+                head = head.next;
+            }
+
+            string rev = new string(num.Reverse().ToArray());
+            return String.Compare(num, rev) == 0;
         }
 
         static void Main(string[] args)
         {
+            ListNode listNode1 = new ListNode(1);
+            listNode1.next = new ListNode(2);
+            listNode1.next.next = new ListNode(2);
+            listNode1.next.next.next = new ListNode(1);
+            IsPalindrome(listNode1);
         }
     }
 }

@@ -11,28 +11,30 @@
 
             int[] nums2 = { 0, 0, 1, 1, 1, 1, 2, 3, 3 };
             RemoveDuplicates(nums2);
+
+            int[] nums3 = { 1 };
+            RemoveDuplicates(nums3);
         }
 
         public static int RemoveDuplicates(int[] nums)
         {
-            int left = 0, right = 1, count = 1;
-            while (right < nums.Length)
-            {
-                if (nums[left] != nums[right])
-                {
-                    nums[left + right] = nums[right];
-                    count = 1;
-                }
-                else if (nums[left] == nums[right] && count < 2)
-                {
-                    nums[left + right] = nums[right];
-                    count++;
-                }
+            int n = nums.Length;
 
-                right++;
+            if (n <= 2)
+                return n;
+
+            int left = 2;
+
+            for (int right = 2; right < n; right++)
+            {
+                if (nums[left - 2] != nums[right])
+                {
+                    nums[left] = nums[right];
+                    left++;
+                }
             }
 
-            return left + 1;
+            return left;
         }
     }
 }

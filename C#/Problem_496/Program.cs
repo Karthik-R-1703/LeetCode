@@ -1,4 +1,6 @@
-﻿namespace Problem_496
+﻿using System;
+
+namespace Problem_496
 {
     // 496. Next Greater Element I
     // https://leetcode.com/problems/next-greater-element-i/
@@ -20,23 +22,21 @@
             int[] result = new int[nums1.Length];
             for (int n = 0; n < nums1.Length; n++)
             {
-                int max = int.MinValue;
-                int i = 0;
-                for (i = nums2.Length - 1; i >= 0; i--)
+                int index = Array.IndexOf(nums2, nums1[n]);
+                int max = nums1[n];
+                for (int i = index + 1; i < nums2.Length; i++)
                 {
-                    if (nums2[i] == nums1[n])
-                        break;
-
                     if (nums2[i] > max)
+                    {
                         max = nums2[i];
+                        break;
+                    }
                 }
 
-                if (max == int.MinValue)
+                if (max == nums1[n])
                     result[n] = -1;
-                else if (max > nums1[n])
-                    result[n] = i;
                 else
-                    result[n] = -1;
+                    result[n] = max;
             }
 
             return result;

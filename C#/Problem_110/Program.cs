@@ -26,7 +26,7 @@ namespace Problem_110
                 return false;
 
             if (Math.Abs(Depth(root.left) - Depth(root.right)) <= 1)
-                return true;
+                return true && IsBalanced(root.left) && IsBalanced(root.right);
             else
                 return false;
         }
@@ -35,8 +35,6 @@ namespace Problem_110
         {
             if (root == null)
                 return 0;
-            else if (root.left == null && root.right == null)
-                return 1;
 
             return Math.Max(Depth(root.left), Depth(root.right)) + 1;
         }

@@ -49,8 +49,7 @@ namespace Problem_15
                     }
                 }
 
-                int start = nums[i];
-                while (i < nums.Length - 2 && nums[i] == start)
+                while (i < nums.Length - 2 && nums[i] == a)
                     i++;
             }
 

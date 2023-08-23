@@ -8,25 +8,22 @@
         {
             MaxProfit(new int[] { 7, 1, 5, 3, 6, 4 });
             MaxProfit(new int[] { 7, 6, 4, 3, 1 });
+            MaxProfit(new int[] { 1, 2 });
         }
 
         public static int MaxProfit(int[] prices)
         {
+            int buy = int.MaxValue;
             int maxProfit = 0;
-            for (int i = 0; i < prices.Length - 1; i++)
+            for (int i = 0; i < prices.Length; i++)
             {
-                int buy = prices[i];
-                int max = 0;
-                for (int j = i + 1; j < prices.Length; j++)
-                {
-                    int sell = prices[j];
-                    int profit = sell - buy;
-                    if (profit > max)
-                        max = profit;
-                }
+                int sell = prices[i];
+                if (sell < buy)
+                    buy = sell;
 
-                if (max > maxProfit)
-                    maxProfit = max;
+                int profit = sell - buy;
+                if (profit > maxProfit)
+                    maxProfit = profit;
             }
 
             return maxProfit;

@@ -20,7 +20,7 @@ namespace Problem_2483
                 else
                     totalNCount++;
 
-                int curPenalty = totalYCount - totalNCount;
+                int curPenalty = totalYCount + totalNCount;
                 if (curPenalty < minPenalty)
                 {
                     minPenalty = curPenalty;

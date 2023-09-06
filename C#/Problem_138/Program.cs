@@ -1,4 +1,8 @@
-﻿namespace Problem_138
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Problem_138
 {
     // Definition for a Node.
     public class Node
@@ -21,9 +25,16 @@
     {
         public static Node CopyRandomList(Node head)
         {
-            Node copy = new Node(head.val);
+            if (head == null)
+                return null;
 
-            return copy;
+            Node cur = head;
+            while (cur != null)
+            {
+                cur = cur.next;
+            }
+
+            return cur;
         }
 
         static void Main(string[] args)

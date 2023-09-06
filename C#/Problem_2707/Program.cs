@@ -16,7 +16,7 @@ namespace Problem_2707
 
         public int MinExtraChar(string s, string[] dictionary)
         {
-
+            return 0;
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace Problem_138
 {
@@ -29,12 +27,26 @@ namespace Problem_138
                 return null;
 
             Node cur = head;
+            Dictionary<Node, Node> Copy = new Dictionary<Node, Node>();
             while (cur != null)
             {
+                Copy.Add(cur, new Node(cur.val));
                 cur = cur.next;
             }
 
-            return cur;
+            cur = head;
+            while (cur != null)
+            {
+                if (cur.next != null)
+                    Copy[cur].next = Copy[cur.next];
+
+                if (cur.random != null)
+                    Copy[cur].random = Copy[cur.random];
+
+                cur = cur.next;
+            }
+
+            return Copy[head];
         }
 
         static void Main(string[] args)

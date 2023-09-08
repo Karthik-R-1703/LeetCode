@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace Problem_7021
 {
@@ -10,41 +9,22 @@ namespace Problem_7021
     {
         public static bool CanBeEqual(string s1, string s2)
         {
-            char[] c_s1 = s1.ToCharArray();
-            char[] c_s2 = s2.ToCharArray();
-
-            Array.Sort(c_s1);
-            Array.Sort(c_s2);
-            if (!c_s1.SequenceEqual(c_s2))
-                return false;
-
-            for (int i = 0; i < s1.Length; i++)
+            List<string> Strings = new List<string>
             {
-                if (s1[i] == s2[i])
-                {
-                    continue;
-                }
-                else
-                {
-                    int j = s2.Substring(i).IndexOf(s1[i]) + i;
-                    if (Math.Abs(j - i) != 2)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        char[] charArray = s2.ToCharArray();
+                s1,
+                CharString(s1, 0, 2),
+                CharString(s1, 1, 3),
+                CharString(CharString(s1, 0, 2), 1, 3)
+            };
 
-                        char temp = charArray[i];
-                        charArray[i] = charArray[j];
-                        charArray[j] = temp;
+            return Strings.Contains(s2);
+        }
 
-                        s2 = new string(charArray);
-                    }
-                }
-            }
-
-            return true;
+        public static string CharString(string s, int i1, int i2)
+        {
+            char[] charArray = s.ToCharArray();
+            (charArray[i1], charArray[i2]) = (charArray[i2], charArray[i1]);
+            return new string(charArray);
         }
 
         static void Main(string[] args)

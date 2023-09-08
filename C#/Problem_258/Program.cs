@@ -4,20 +4,23 @@
     // https://leetcode.com/problems/add-digits/
     internal class Program
     {
-        public static long AddDigits(long num)
+        public static int AddDigits(int num)
         {
             if (num <= 9)
                 return num;
 
-            long digits = 0;
+            int digits = 0;
             while (num > 0)
             {
                 digits += num % 10;
                 num /= 10;
-            }
 
-            if (digits > 9)
-                digits = AddDigits(digits);
+                if (num == 0 && digits > 9)
+                {
+                    num = digits;
+                    digits = 0;
+                }
+            }
 
             return digits;
         }

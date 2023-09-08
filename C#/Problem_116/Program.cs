@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Problem_116
 {
@@ -36,6 +32,36 @@ namespace Problem_116
     {
         public static Node Connect(Node root)
         {
+            if (root == null)
+                return null;
+
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(root);
+
+            while (queue.Count > 0)
+            {
+                Queue<Node> level = new Queue<Node>();
+                while (queue.Count > 0)
+                {
+                    Node node = queue.Dequeue();
+
+                    if (node.left != null)
+                        level.Enqueue(node.left);
+
+                    if (node.right != null)
+                        level.Enqueue(node.right);
+                }
+
+                while (level.Count > 0)
+                {
+                    Node node = level.Dequeue();
+                    queue.Enqueue(node);
+
+                    if (level.Count > 0)
+                        node.next = level.Peek();
+                }
+            }
+
             return root;
         }
 

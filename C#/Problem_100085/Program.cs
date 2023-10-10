@@ -5,6 +5,8 @@ using System.Linq;
 namespace Problem_100085
 {
     // 100085. Minimum Processing Time
+    // 2895. Minimum Processing Time
+    // https://leetcode.com/problems/minimum-processing-time/description/
     internal class Program
     {
         static void Main(string[] args)

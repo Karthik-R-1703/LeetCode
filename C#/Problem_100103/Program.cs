@@ -1,6 +1,8 @@
 ﻿namespace Problem_100103
 {
     // 100103. Divisible and Non-divisible Sums Difference
+    // 2894. Divisible and Non-divisible Sums Difference
+    // https://leetcode.com/problems/divisible-and-non-divisible-sums-difference/description/
     internal class Program
     {
         public static int DifferenceOfSums(int n, int m)

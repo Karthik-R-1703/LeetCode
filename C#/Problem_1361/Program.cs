@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Problem_1361
 {
     // 1361. Validate Binary Tree Nodes
-    //https://leetcode.com/problems/validate-binary-tree-nodes/description/
+    // https://leetcode.com/problems/validate-binary-tree-nodes/description/
     internal class Program
     {
         static void Main(string[] args)

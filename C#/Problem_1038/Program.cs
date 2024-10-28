@@ -1,21 +1,8 @@
 ﻿using System.Collections.Generic;
+using LeetCode;
 
 namespace Problem_1038
 {
-    // Definition for a binary tree node.
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     // 1038. Binary Search Tree to Greater Sum Tree
     // https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/description/
     internal class Program

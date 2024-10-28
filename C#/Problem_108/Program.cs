@@ -1,21 +1,8 @@
 ﻿using System;
+using LeetCode;
 
 namespace Problem_108
 {
-    // Definition for a binary tree node.
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     // 108. Convert Sorted Array to Binary Search Tree
     // https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
     internal class Program

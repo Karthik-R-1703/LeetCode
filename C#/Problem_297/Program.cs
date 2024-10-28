@@ -1,18 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using LeetCode;
 
 namespace Problem_297
 {
-    // Definition for a binary tree node.
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int x) { val = x; }
-    }
-
     public class Codec
     {
         // Encodes a tree to a single string.

@@ -1,4 +1,6 @@
-﻿namespace Problem_938
+﻿using LeetCode;
+
+namespace Problem_938
 {
     // 938. Range Sum of BST
     // https://leetcode.com/problems/range-sum-of-bst/description/
@@ -32,20 +34,6 @@
             sum = 0;
             RangeSum(root, low, high);
             return sum;
-        }
-    }
-
-    // Definition for a binary tree node.
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
         }
     }
 }

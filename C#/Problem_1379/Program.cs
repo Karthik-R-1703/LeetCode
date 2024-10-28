@@ -1,14 +1,7 @@
-﻿namespace Problem_1379
-{
-    // Definition for a binary tree node.
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int x) { val = x; }
-    }
+﻿using LeetCode;
 
+namespace Problem_1379
+{
     // 1379. Find a Corresponding Node of a Binary Tree in a Clone of That Tree
     // https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/
     internal class Program

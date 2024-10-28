@@ -1,21 +1,8 @@
 ﻿using System.Collections.Generic;
+using LeetCode;
 
 namespace Problem_105
 {
-    // Definition for a binary tree node.
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     // 105. Construct Binary Tree from Preorder and Inorder Traversal
     // https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
     internal class Program

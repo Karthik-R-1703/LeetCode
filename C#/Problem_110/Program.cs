@@ -1,21 +1,8 @@
 ﻿using System;
+using LeetCode;
 
 namespace Problem_110
 {
-    // Definition for a binary tree node.
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     // 110. Balanced Binary Tree
     // https://leetcode.com/problems/balanced-binary-tree/
     internal class Program

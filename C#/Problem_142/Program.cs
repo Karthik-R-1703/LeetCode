@@ -1,17 +1,7 @@
-﻿namespace Problem_142
-{
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int x)
-        {
-            val = x;
-            next = null;
-        }
-    }
+﻿using LeetCode;
 
+namespace Problem_142
+{
     // 142. Linked List Cycle II
     // https://leetcode.com/problems/linked-list-cycle-ii/
     internal class Program

@@ -5,19 +5,6 @@ namespace Problem_1367
 {
     // 1367. Linked List in Binary Tree
     // https://leetcode.com/problems/linked-list-in-binary-tree/description/
-
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     internal class Program
     {
         private static bool IsMatch(ListNode head, TreeNode root)

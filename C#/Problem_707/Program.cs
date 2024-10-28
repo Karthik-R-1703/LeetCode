@@ -1,17 +1,7 @@
-﻿namespace Problem_707
-{
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
+﻿using LeetCode;
 
+namespace Problem_707
+{
     public class MyLinkedList
     {
         private ListNode myLinkedList = null;

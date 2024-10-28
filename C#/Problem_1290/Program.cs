@@ -1,19 +1,8 @@
 ﻿using System;
+using LeetCode;
 
 namespace Problem_1290
 {
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     // 1290. Convert Binary Number in a Linked List to Integer
     // https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
     internal class Program

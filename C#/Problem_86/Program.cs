@@ -1,17 +1,7 @@
-﻿namespace Problem_86
-{
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
+﻿using LeetCode;
 
+namespace Problem_86
+{
     // 86. Partition List
     // https://leetcode.com/problems/partition-list/
     internal class Program

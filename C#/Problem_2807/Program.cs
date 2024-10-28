@@ -1,17 +1,7 @@
-﻿namespace Problem_2807
-{
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
+﻿using LeetCode;
 
+namespace Problem_2807
+{
     // 2807. Insert Greatest Common Divisors in Linked List
     // https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list/
     internal class Program

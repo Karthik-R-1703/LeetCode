@@ -1,17 +1,7 @@
-﻿namespace Problem_876
-{
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
+﻿using LeetCode;
 
+namespace Problem_876
+{
     // 876. Middle of the Linked List
     // https://leetcode.com/problems/middle-of-the-linked-list/
     internal class Program

@@ -1,16 +1,7 @@
-﻿namespace Problem_160
-{
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int x)
-        {
-            val = x;
-        }
-    }
+﻿using LeetCode;
 
+namespace Problem_160
+{
     // 160. Intersection of Two Linked Lists
     // https://leetcode.com/problems/intersection-of-two-linked-lists/
     internal class Program

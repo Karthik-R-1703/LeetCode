@@ -7,3 +7,7 @@
 *.txt
 *.vsidx
 .NETFramework,Version=v4.8.AssemblyAttributes.cs
+DocumentLayout.json
+DocumentLayout.backup.json
+*.csproj.dtbcache.json
+fileList.bin

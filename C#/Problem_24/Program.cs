@@ -1,17 +1,7 @@
-﻿namespace Problem_24
-{
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
+﻿using LeetCode;
 
+namespace Problem_24
+{
     // 24. Swap Nodes in Pairs
     // https://leetcode.com/problems/swap-nodes-in-pairs/
     internal class Program

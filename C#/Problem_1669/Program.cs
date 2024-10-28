@@ -1,17 +1,7 @@
-﻿namespace Problem_1669
-{
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
+﻿using LeetCode;
 
+namespace Problem_1669
+{
     // 1669. Merge In Between Linked Lists
     // https://leetcode.com/problems/merge-in-between-linked-lists/description/
     internal class Program

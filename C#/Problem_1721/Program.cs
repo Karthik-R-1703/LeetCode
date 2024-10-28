@@ -1,19 +1,8 @@
 ﻿using System.Collections.Generic;
+using LeetCode;
 
 namespace Problem_1721
 {
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     // 1721. Swapping Nodes in a Linked List
     // https://leetcode.com/problems/swapping-nodes-in-a-linked-list/description/
     internal class Program

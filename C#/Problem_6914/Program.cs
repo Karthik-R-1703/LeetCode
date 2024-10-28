@@ -1,19 +1,8 @@
 ﻿using System.Text;
+using LeetCode;
 
 namespace Problem_6914
 {
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     // 6914. Double a Number Represented as a Linked List
     // 2816. Double a Number Represented as a Linked List
     // https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/

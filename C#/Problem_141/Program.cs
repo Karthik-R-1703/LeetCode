@@ -1,19 +1,8 @@
 ﻿using System.Collections.Generic;
+using LeetCode;
 
 namespace Problem_141
 {
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int x)
-        {
-            val = x;
-            next = null;
-        }
-    }
-
     // 141. Linked List Cycle
     // https://leetcode.com/problems/linked-list-cycle/
     internal class Program

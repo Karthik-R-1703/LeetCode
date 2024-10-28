@@ -67,6 +67,9 @@
     <Compile Include="..\Binary_Tree\TreeNode.cs">
       <Link>TreeNode.cs</Link>
     </Compile>
+    <Compile Include="..\Singly_Linked_List\ListNode.cs">
+      <Link>ListNode.cs</Link>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

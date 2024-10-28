@@ -1,17 +1,7 @@
-﻿namespace Problem_203
-{
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
+﻿using LeetCode;
 
+namespace Problem_203
+{
     // 203. Remove Linked List Elements
     // https://leetcode.com/problems/remove-linked-list-elements/
     internal class Program

@@ -1,17 +1,7 @@
-﻿namespace Problem_2326
-{
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
+﻿using LeetCode;
 
+namespace Problem_2326
+{
     // 2326. Spiral Matrix IV
     // https://leetcode.com/problems/spiral-matrix-iv/description/
     internal class Program

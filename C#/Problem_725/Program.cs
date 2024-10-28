@@ -1,20 +1,9 @@
-﻿namespace Problem_725
+﻿using LeetCode;
+
+namespace Problem_725
 {
     // 725. Split Linked List in Parts
     // https://leetcode.com/problems/split-linked-list-in-parts/description/
-
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     internal class Program
     {
         static void Main(string[] args)

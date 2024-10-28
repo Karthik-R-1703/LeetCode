@@ -1,19 +1,8 @@
 ﻿using System;
+using LeetCode;
 
 namespace Problem_92
 {
-    // Definition for singly-linked list.
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     // 92. Reverse Linked List II
     // https://leetcode.com/problems/reverse-linked-list-ii/
     internal class Program

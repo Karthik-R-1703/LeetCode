@@ -1,4 +1,5 @@
 *.cache
+*.csproj.dtbcache.json
 *.exe
 *.exe.config
 *.lock
@@ -7,7 +8,10 @@
 *.txt
 *.vsidx
 .NETFramework,Version=v4.8.AssemblyAttributes.cs
-DocumentLayout.json
+CodeChunks.db
 DocumentLayout.backup.json
-*.csproj.dtbcache.json
+DocumentLayout.json
+SemanticSymbols.db
+SemanticSymbols.db-shm
+SemanticSymbols.db-wal
 fileList.bin

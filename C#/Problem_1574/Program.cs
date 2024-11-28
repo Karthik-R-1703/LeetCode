@@ -14,7 +14,7 @@ namespace Problem_1574
 
             int minLength = r;
             int l = 0;
-            while (l < r - 1 && (l == 0 || arr[l] <= arr[l + 1]))
+            while (l < r && (l == 0 || arr[l - 1] <= arr[l]))
             {
                 while (r < arr.Length && arr[l] > arr[r])
                     r++;
